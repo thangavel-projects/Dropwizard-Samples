@@ -1,0 +1,46 @@
+# Database settings.
+database:
+
+  # the name of your JDBC driver
+  driverClass: org.h2.Driver
+
+  # the username
+  user: 
+
+  # the password
+  password: 
+
+  # the JDBC URL
+  url: jdbc:h2:./userrest;DB_CLOSE_DELAY=-1
+
+# server settings
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+    - type: https
+      port: 8443
+      keyStorePath: example.keystore
+      keyStorePassword: example
+      validateCerts: false
+      
+  adminConnectors:
+    - type: http
+      port: 8081
+    - type: https
+      port: 8444
+      keyStorePath: example.keystore
+      keyStorePassword: example
+      validateCerts: false
+      
+  requestLog:
+    timeZone: UTC
+    appenders:
+      - type: file
+        currentLogFilename: /Volumes/D/Sample_Log/server.log
+        threshold: ALL
+        archive: true
+        archivedLogFilenamePattern: /Volumes/D/Sample_Log/server.%d.log.gz
+        archivedFileCount: 14     
+        
+endpoint: http://localhost:8080/
