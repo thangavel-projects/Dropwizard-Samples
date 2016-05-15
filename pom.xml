@@ -9,6 +9,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.artifactId>UserSamples</project.artifactId>
+		<build.version>V1.0</build.version>
 	</properties>
 
 	<dependencies>
